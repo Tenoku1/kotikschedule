@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7e5eb">
+  <meta name="description" content="Милое расписание занятий — чтобы каждый день был чуточку проще и теплее.">
+  <title>Расписание для Котёнка ♡</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <h1>Котёнок, привет!</h1>
+        <p class="hero-subtitle">Пусть твой день будет чудесным</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="sparkle sparkle-one">✦</span>
+        <span class="sparkle sparkle-two">✧</span>
+        <div class="heart-orbit heart-orbit-one">♡</div>
+        <div class="heart-orbit heart-orbit-two">♡</div>
+        <div class="cat-face">
+          <div class="cat-ear ear-left"></div><div class="cat-ear ear-right"></div>
+          <div class="cat-inner-ear inner-left"></div><div class="cat-inner-ear inner-right"></div>
+          <div class="cat-eye eye-left"></div><div class="cat-eye eye-right"></div>
+          <div class="cat-blush blush-left"></div><div class="cat-blush blush-right"></div>
+          <div class="cat-nose"></div><div class="cat-mouth"></div>
+          <div class="cat-whisker whisker-left"></div><div class="cat-whisker whisker-right"></div>
+        </div>
+        <div class="cat-bow"><span></span><i></i><span></span></div>
+        <div class="art-paw paw-one">♡</div><div class="art-paw paw-two">✧</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls-panel" aria-label="Выбор даты и подгруппы">
+        <div class="date-heading">
+          <div>
+            <p class="section-kicker">ТВОЙ ПЛАН НА ДЕНЬ</p>
+            <h2 id="dayTitle">Загружаем расписание…</h2>
+          </div>
+          <button class="today-button" id="todayButton" type="button"><span aria-hidden="true">♡</span> Сегодня</button>
+        </div>
+        <div class="date-controls">
+          <button class="round-button" id="prevDay" type="button" aria-label="Предыдущий день">‹</button>
+          <label class="date-input-wrap" for="datePicker">
+            <span aria-hidden="true">▦</span>
+            <input id="datePicker" type="date" min="2026-09-01" max="2027-01-14" aria-label="Выбрать дату">
+          </label>
+          <button class="round-button" id="nextDay" type="button" aria-label="Следующий день">›</button>
+        </div>
+        <div class="week-strip" id="weekStrip" aria-label="Дни этой недели"></div>
+        <div class="group-row">
+          <span class="group-label">Моя подгруппа</span>
+          <div class="group-switch" role="group" aria-label="Выбрать подгруппу">
+            <button class="group-button active" data-group="1" type="button" aria-pressed="true">№ 1</button>
+            <button class="group-button" data-group="2" type="button" aria-pressed="false">№ 2</button>
+            <button class="group-button" data-group="3" type="button" aria-pressed="false">№ 3</button>
+          </div>
+          <span class="group-hint">Общие пары видны всем</span>
+        </div>
+      </section>
+
+      <section class="schedule-section" aria-live="polite">
+        <div class="schedule-heading">
+          <div>
+            <p class="section-kicker">ШАГ ЗА ШАГОМ</p>
+            <h2>Расписание занятий</h2>
+          </div>
+          <span class="lesson-count" id="lessonCount">0 занятий</span>
+        </div>
+        <div id="scheduleList" class="schedule-list"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">☁</div>
+          <h3>В этот день можно выдохнуть</h3>
+          <p>В расписании нет занятий на выбранную дату. Отдых тоже важен, Котёнок ♡</p>
+        </div>
+      </section>
+
+      <section class="little-reminder">
+        <div class="reminder-heart" aria-hidden="true">♡</div>
+        <div><strong>Маленькое напоминание</strong><p>Попей водички, возьми всё необходимое и не забывай заботиться о себе.</p></div>
+        <span class="reminder-sparkle" aria-hidden="true">✧</span>
+      </section>
+
+      <details class="teachers-panel">
+        <summary><span>Преподаватели</span><span class="summary-note">можно раскрыть</span></summary>
+        <div id="teachersList" class="teachers-list"></div>
+      </details>
+    </main>
+
+    <footer class="footer"><span>Сделано с любовью</span><span class="footer-heart">♥</span><span>для Котёнка</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
